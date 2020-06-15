@@ -1,9 +1,12 @@
 package Korisnici;
 import OsnovnaKlasa.Osoba;
-enum Specijalizacija{
-	Automehanicar,Auto_elektricar,Vulkanizer,Limar
-};
 public class Serviser extends Osoba {
+	enum Specijalizacija{
+		AUTOMEHANICAR,
+		AUTO_ELEKTRICAR,
+		VULKANIZER,
+		LIMAR
+	};
 	private int plata;
 	private Specijalizacija specijalizacija;
 	public Serviser() {

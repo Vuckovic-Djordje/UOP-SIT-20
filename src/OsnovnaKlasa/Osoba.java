@@ -13,6 +13,7 @@ public abstract class Osoba {
 		protected String lozinka;
 	
 	public Osoba() {
+		
 		this.id=Osoba.ID++;
 		this.ime = "";
 		this.prezime = "";
@@ -25,6 +26,7 @@ public abstract class Osoba {
 	}
 	public Osoba(String ime,String prezime,String JMBG,String pol,String brojTelefona,String adresa,String korisnickoIme,String lozinka) {
 		
+		this.id=Osoba.ID++;
 		this.ime = ime;
 		this.prezime = prezime;
 		this.JMBG = JMBG;
