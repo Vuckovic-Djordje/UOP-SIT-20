@@ -1,16 +1,21 @@
 package OsnovnaKlasa;
 
 public abstract class Osoba {
+		public enum Pol {
+		MUSKI,
+		ZENSKI
+		}
 		static protected int ID=0;
 		protected int id;
 		protected String ime;
 		protected String prezime;
 		protected String JMBG;
-		protected String pol;
+		protected Pol pol;
 		protected String brojTelefona;
 		protected String adresa;
 		protected String korisnickoIme;
 		protected String lozinka;
+		protected boolean obrisan;
 	
 	public Osoba() {
 		
@@ -18,13 +23,14 @@ public abstract class Osoba {
 		this.ime = "";
 		this.prezime = "";
 		this.JMBG = "";
-		this.pol = "";
+		this.pol = Pol.MUSKI;
 		this.brojTelefona = "";
 		this.adresa = "";
 		this.korisnickoIme = "";
 		this.lozinka = "";
+		this.obrisan=false;
 	}
-	public Osoba(String ime,String prezime,String JMBG,String pol,String brojTelefona,String adresa,String korisnickoIme,String lozinka) {
+	public Osoba(String ime,String prezime,String JMBG,Pol pol,String brojTelefona,String adresa,String korisnickoIme,String lozinka,boolean obrisan) {
 		
 		this.id=Osoba.ID++;
 		this.ime = ime;
@@ -35,6 +41,7 @@ public abstract class Osoba {
 		this.adresa = adresa;
 		this.korisnickoIme = korisnickoIme;
 		this.lozinka = lozinka;
+		this.obrisan=obrisan;
 	}
 	public String getIme() {
 		return ime;
@@ -43,7 +50,7 @@ public abstract class Osoba {
 	public void setIme(String ime) {
 		this.ime = ime;
 	}
-	public String getPretime() {
+	public String getPrezime() {
 		return prezime;
 	}
 
@@ -58,11 +65,11 @@ public abstract class Osoba {
 	public void setJMBG(String JMBG) {
 		this.JMBG = JMBG;
 	}
-	public String getPol() {
+	public Pol getPol() {
 		return pol;
 	}
 
-	public void setPol(String pol) {
+	public void setPol(Pol pol) {
 		this.pol = pol;
 	}
 	public String getBrojTelefona() {
@@ -92,6 +99,13 @@ public abstract class Osoba {
 
 	public void setLozinka(String lozinka) {
 		this.lozinka = lozinka;
+	}
+	public boolean isObrisan() {
+		return obrisan;
+	}
+
+	public void setObrisan(boolean obrisan) {
+		this.obrisan = obrisan;
 	}
 	
 
